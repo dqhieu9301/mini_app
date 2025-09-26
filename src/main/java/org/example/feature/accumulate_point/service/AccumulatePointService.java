@@ -136,13 +136,13 @@ public class AccumulatePointService {
     }
 
     public void checkTheTimeFrame(LocalDateTime localDateTime) {
-//        LocalTime now = localDateTime.toLocalTime();
-//        boolean inMorning = now.isAfter(LocalTime.of(9, 0)) && now.isBefore(LocalTime.of(11, 0));
-//        boolean inEvening = now.isAfter(LocalTime.of(19, 0)) && now.isBefore(LocalTime.of(21, 0));
-//
-//        if (!inMorning && !inEvening) {
-//            throw new BadRequestException(ErrorCodeEnum.OUTSIDE_CHECKIN_HOURS);
-//        }
+        LocalTime now = localDateTime.toLocalTime();
+        boolean inMorning = now.isAfter(LocalTime.of(9, 0)) && now.isBefore(LocalTime.of(11, 0));
+        boolean inEvening = now.isAfter(LocalTime.of(19, 0)) && now.isBefore(LocalTime.of(21, 0));
+
+        if (!inMorning && !inEvening) {
+            throw new BadRequestException(ErrorCodeEnum.OUTSIDE_CHECKIN_HOURS);
+        }
     }
 
     @Transactional
