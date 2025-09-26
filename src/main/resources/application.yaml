@@ -1,0 +1,31 @@
+server:
+  port: ${PORT}
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+
+spring:
+  jpa:
+
+    properties:
+      hibernate:
+        default_schema: ${SCHEMA}
+        show_sql: true
+        format_sql: true
+  datasource:
+    url: ${URL_DB}
+    username: ${USERNAME_DB}
+    password: ${PASSWORD_DB}
+    driverClassName: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/app-changelog.xml
+    default-schema: ${SCHEMA}
+
+redis:
+  address: ${REDIS_ADDRESS}
+  master: ${REDIS_MASTER}
+  password: ${REDIS_PASSWORD}
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  expiration: ${JWT_EXPIRATION}
